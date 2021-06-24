@@ -1,8 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { spawn, Thread, Worker } from "threads";
+import logo from "./logo.svg";
+import "./App.css";
+
+async function runWorker() {
+  const add = await spawn(new Worker("./workers/add"));
+  const sum = await add(2, 3);
+
+  console.log(`2 + 3 = ${sum}`);
+
+  await Thread.terminate(add);
+}
 
 function App() {
+  runWorker().catch(console.error);
   return (
     <div className="App">
       <header className="App-header">

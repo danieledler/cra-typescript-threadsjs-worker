@@ -1,3 +1,9 @@
+# TypeScript worker with threads.js and Create React App
+
+Minimal example that runs a Worker from threads.js in a project bootstrapped with Create React App using the TypeScript template.
+
+[Craco](https://github.com/gsoft-inc/craco) is added to be able to use the [webpack threads-plugin](https://github.com/andywer/threads-plugin).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
